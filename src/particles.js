@@ -28,7 +28,7 @@ export class ParticleSystem {
     }
 
     initParticles() {
-        this.particleCount = 150000;
+        this.particleCount = 1050000;
         this.geometry = new THREE.BufferGeometry();
         this.positions = new Float32Array(this.particleCount * 3);
         this.velocities = new Float32Array(this.particleCount * 3);
@@ -63,12 +63,12 @@ export class ParticleSystem {
         this.geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
 
         const material = new THREE.PointsMaterial({
-            size: 0.1,
+            size: 0.000001,
             vertexColors: true,
             blending: THREE.AdditiveBlending,
             depthWrite: false,
             transparent: true,
-            opacity: 0.8
+            opacity: 0.7
         });
 
         this.points = new THREE.Points(this.geometry, material);
